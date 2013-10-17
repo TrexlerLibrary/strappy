@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<script type="text/javascript" src="http://bettercodesandgarden.name/ill/js/code39.js"></script>
+<script type="text/javascript" src="code39.js"></script>
 
 <style>
   #barcode {
@@ -35,7 +35,7 @@
     <p>Patron: <strong><?=$patron?></strong></p>
     <p>Barcode/ILL#</p>
     <p id="inputdata">(<?=$barcode?>)</p>
-    <p>Due Date: <h3><?=$dueDate?></h3></p>
+    <p>Due Date: <h3 contenteditable="true"><?=$dueDate?></h3></p>
     <p><strong>OVERDUE FINE OF $2.00 PER DAY</strong> </p>
 
     <p>Requests for renewal should be made on, or before due date. <p>
@@ -67,7 +67,6 @@
    return object;
   }
 get_object("inputdata").innerHTML=DrawCode39Barcode(get_object("inputdata").innerHTML,0);
-
 </script>
 
 </body>
