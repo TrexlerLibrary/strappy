@@ -3,7 +3,8 @@
         l  = document.getElementsByClassName("lendingInformationExtra"),
         p  = document.getElementsByClassName("patronExtra"),
         b = document.getElementsByClassName("accordionRequestDetailsRequestId"),
-        url, path = "http://malantonio.com/strappy.php";
+        url, 
+        path = ""; // put in the path to yr landing page here!
 
     // if these don't exist, or are empty, return false
     if(!d | !d.length | !l | !l.length | !p | !p.length | !b | !b.length) {
