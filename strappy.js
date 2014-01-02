@@ -4,7 +4,7 @@
         p  = document.getElementsByClassName("patronExtra"),
         b = document.getElementsByClassName("accordionRequestDetailsRequestId"),
         url, 
-        path = ""; // put in the path to yr landing page here!
+        path = "http://libappdev.muhlenberg.edu/strappy/"; // put in the path to yr landing page here!
 
     // if these don't exist, or are empty, return false
     if(!d | !d.length | !l | !l.length | !p | !p.length | !b | !b.length) {
