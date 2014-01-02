@@ -13,14 +13,14 @@ if(!empty($_GET)) {
 <!-- Begin yr ILL strap template here -->
 
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<script type="text/javascript" src="code39.js"></script>
+<script type="text/javascript" src="connectcode-javascript-code39.js"></script>
 
 <style>
   #barcode {
     font-weight: normal; 
     font-style: normal; 
     line-height: normal; 
-    font-size: 12pt;
+    font-size: 10px;
   }
   #container {
     margin-top: 25%;
@@ -107,7 +107,21 @@ if(!empty($_GET)) {
   var barcode = document.getElementById('barcode')
     , dueDate = document.querySelector('.dueDate');
 
-  barcode.innerHTML = DrawCode39Barcode(barcode.innerHTML, 0);
+  barcode.innerHTML = DrawHTMLBarcode_Code39(
+    barcode.innerHTML, // data
+    0,                 // checkDigit
+    'yes',             // humanReadable
+    'in',              // units
+    0,                 // minBarWidth
+    3,                 // width
+    .35,               // height
+    3,                 // barWidthRatio
+    'bottom',          // textLocation
+    'center',          // textAlignment
+    '',                // textStyle
+    'black',           // foreColor  
+    'white'            // backColor
+  );
   var spans = document.querySelectorAll('#barcode div span');
   
   /*
