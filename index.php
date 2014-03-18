@@ -12,7 +12,7 @@ if(!empty($_GET)) {
 <head>
 <!-- Begin yr ILL strap template here -->
 
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 <script type="text/javascript" src="connectcode-javascript-code39.js"></script>
 
 <style>
@@ -98,7 +98,12 @@ if(!empty($_GET)) {
                 </div>
            </div>
         </form>
+
+
+        <a href='<?='javascript:' . file_get_contents('strappy.min.js')?>' class="label label-info" style="margin-top:50px;font-weight:400;padding:5px">strappy</a> 
+        <i class="icon-arrow-left" style="margin-left: 10px;"></i> drag this button into your bookmarks bar 
     </div>
+
 
 <?php } ?>
 
