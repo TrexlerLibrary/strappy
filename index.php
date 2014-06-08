@@ -140,6 +140,20 @@ if(!empty($_GET)) {
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script>
+function removeChildren(el) {
+  if ( !(el instanceof HTMLElement) ) {
+    el = document.querySelector(el);
+  }
+
+  var counter = 0;
+
+  if ( el.hasChildNodes() ) {
+    for ( var i = 0; i < el.childNodes.length; i++ ) {
+      if ( el.removeChild(el.childNodes[i]) ) { counter++ }
+    }
+  }
+}
+
 function buildLink() {
     var strappy_path = document.getElementById('path').value || ''
       , strappy_path = !/^http:\/\//.test(strappy_path) ? 'http://' + strappy_path : strappy_path
