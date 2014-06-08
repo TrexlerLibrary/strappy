@@ -158,7 +158,7 @@ function buildLink() {
     var strappy_path = document.getElementById('path').value || ''
       , strappy_path = !/^http:\/\//.test(strappy_path) ? 'http://' + strappy_path : strappy_path
       , bookmarklet = document.getElementById('bookmarklet')
-      , bkmrk = '(function () {var d=document.getElementsByClassName("yui-field-dueDate"),l=document.getElementsByClassName("lendingInformationExtra"),p=document.getElementsByClassName("patronExtra"),b=document.getElementsByClassName("accordionRequestDetailsRequestId"),url,path="' + strappy_path + '";if(!d|!d.length|!l|!l.length|!p|!p.length|!b|!b.length){return false;}d=d[d.length-1].innerHTML;l=l[l.length-1].innerHTML.replace("(Supplier: ", "").replace(")", "");p=p[p.length-1].innerHTML.replace("(", "").replace(")", "");b=b[b.length-1].innerHTML;window.open(path+"?barcode="+b+"&lender="+l+"&patron="+encodeURI(p)+"&dueDate="+encodeURI(d),"_blank");})()'
+      , bkmrk = '!function(){var a=document.getElementsByClassName("yui-field-originalDueDate"),b=document.getElementsByClassName("lendingInformationExtra"),c=document.getElementsByClassName("patronExtra"),d=document.getElementsByClassName("accordionRequestDetailsRequestId"),e="' + strappy_path + '";return!a|!a.length|!b|!b.length|!c|!c.length|!d|!d.length?!1:(a=a[a.length-1].innerHTML,b=b[b.length-1].innerHTML.replace("(Supplier: ","").replace(")",""),c=c[c.length-1].innerHTML.replace("(","").replace(")",""),d=d[d.length-1].innerHTML,void window.open(e+"?barcode="+d+"&lender="+b+"&patron="+encodeURI(c)+"&dueDate="+encodeURI(a),"_blank"))}();'
       , a, arrow, i, clear
         ;
 
@@ -180,7 +180,6 @@ function buildLink() {
         arrow.appendChild(i);
         arrow.innerHTML += ' drag this button into your bookmarks bar'
 
-
         clear = document.createElement('a');
         clear.addEventListener('click', function(e) {
             e.preventDefault();
@@ -188,9 +187,9 @@ function buildLink() {
             bookmarklet.removeChild(a);
             bookmarklet.removeChild(arrow);
             bookmarklet.removeChild(clear);
-            //bookmarklet.removeChild(e.target);
             bookmarklet.className = '';
         });
+        
         clear.href = '#';
         clear.innerText = 'click to clear';
         clear.style.display = 'block';
