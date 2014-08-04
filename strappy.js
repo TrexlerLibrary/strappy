@@ -11,13 +11,13 @@
         return false;
     }
 
-    // else grab the innerHTML of the last element in array, 
+    // else grab the textContent of the last element in array, 
     // cleaning up where necessary
     
-    d = d[d.length - 1].innerHTML;
-    l = l[l.length - 1].innerHTML.replace("(Supplier: ", "").replace(")", "");
-    p = p[p.length - 1].innerHTML.replace("(", "").replace(")", "");    
-    b = b[b.length - 1].innerHTML;
+    d = d[d.length - 1].textContent;
+    l = l[l.length - 1].textContent.replace("(Supplier: ", "").replace(")", "");
+    p = p[p.length - 1].textContent.replace("(", "").replace(")", "");    
+    b = b[b.length - 1].textContent;
 
     // open a new window/tab and send them on their way
     window.open(path + "?barcode=" + b + "&lender=" + l + "&patron=" + encodeURI(p) + "&dueDate=" + encodeURI(d), "_blank");

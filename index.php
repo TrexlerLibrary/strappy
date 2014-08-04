@@ -232,7 +232,7 @@ document.getElementById('bkmklt-btn').addEventListener('click', buildLink);
     /*
      *  because we can, let's escape the asterisks that appear b/c of code39.js
      */
-    spans[(spans.length - 1)].innerText = spans[(spans.length - 1)].innerText.replace(/\*/g, '')
+    spans[(spans.length - 1)].textContent = spans[(spans.length - 1)].textContent.replace(/\*/g, '')
     
     /* 
      * if no due date is provided from worldcat, let's draw the user's attention to it
